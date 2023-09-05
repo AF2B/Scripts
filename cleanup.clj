@@ -24,13 +24,11 @@
   (System/exit 0))
 
 (defn -main []
-  #_{:clj-kondo/ignore [:missing-else-branch]}
   (if (not (.isDirectory (java.io.File. directory)))
     (do
       (println "Error: Log directory not found.")
       (System/exit 1)))
 
-  #_{:clj-kondo/ignore [:missing-else-branch]}
   (if (not (.canWrite (java.io.File. directory)))
     (do
       (println "Error: Log file is not writable.")
